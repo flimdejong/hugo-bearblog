@@ -7,7 +7,7 @@
   </small>
   {{ end }}
   <ul class="blog-posts">
-    {{ range .Pages }}
+    {{ range (where .Site.RegularPages "Section" "blog") }}
     <li>
       <span>
         <i>
