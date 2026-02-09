@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-=======
-{{- $pages := .Site.RegularPages -}}
->>>>>>> 36ebc7e24d3f38acacbaecf086e91280c8779573
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content on {{ .Site.Title }}</description>
     <language>en-US</language>
-<<<<<<< HEAD
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml"/>
     
@@ -23,7 +18,6 @@
         <description>{{ .Content | html }}</description>
       </item>
       {{ end }}
-=======
     {{/* This line fixes the 'lastBuildDate must be RFC-822' error */}}
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml"/>
@@ -35,7 +29,6 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Content | html }}</description>
     </item>
->>>>>>> 36ebc7e24d3f38acacbaecf086e91280c8779573
     {{ end }}
   </channel>
 </rss>
