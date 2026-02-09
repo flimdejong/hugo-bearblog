@@ -1,0 +1,27 @@
+{{ define "main" }}
+<content>
+  <h1>Our Authors</h1>
+
+  <ul class="author-list">
+    {{ $blog := .Site.GetPage "section" "blog" }}
+    
+    {{ range $blog.Sections }}
+      <li>
+        <a href="{{ .Permalink }}" style="font-size: 1.2rem; font-weight: bold;">
+          {{ .Title }}
+        </a>
+        {{ with .Params.bio }}
+          <p style="margin-top: 5px; opacity: 0.8;">{{ . }}</p>
+        {{ end }}
+      </li>
+    {{ else }}
+      <li>
+        <strong>No authors found.</strong><br>
+        Checklist:<br>
+        - Does <code>content/blog/flim/</code> have an <code>_index.md</code>?<br>
+        - Is <code>draft = false</code> in that file?
+      </li>
+    {{ end }}
+  </ul>
+</content>
+{{ end }}
